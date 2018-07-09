@@ -22,17 +22,15 @@
 body {
   background-color: #fff;
   color: #000;
-  overflow: scroll;
-  width: 2480px;
   font-family: 'Myriad Pro Regular';
+  font-size: 14px;
 }
 .header {
   text-align: center;
-  line-height: 100px;
 }
 .round {
-  width: 460px;
-  height: 460px;
+  width: 192px;
+  height: 192px;
   background: #fff;
   border: 2px solid #3d6cb0;
   border-radius: 50%;
@@ -43,43 +41,53 @@ body {
   content: "";
   display: block;
   position: absolute;
-  width: 405px;
-  height: 405px;
+  width: 170px;
+  height: 170px;
   background: #3d6cb0;
   border-radius: 50%;
-  top: 28px;
-  left: 28px;
+  top: 10px;
+  left: 10px;
+}
+@media (min-size: 1024px) {
+  .name {
+    font-size: 43.13px;
+  }
+  .surname {
+    font-size: 50.96px;
+  }
+  .profession {
+    font-size: 20.63px;
+  }
+  .about-header {
+    font-size: 33.97px;
+  }
+  .about-info,
+  span.profile-info-bold {
+    font-size: 12.74px;
+  }
 }
 .name {
   font-family: 'Myriad Pro Light SemiExtended';
   text-transform: uppercase;
-  font-size: 104.49px;
+  font-size: 3em;
   margin-top: 65px;
 }
 .surname {
   text-transform: uppercase;
-  font-size: 123.45px;
+  font-size: 3em;
   font-family: 'Myriad Pro Bold';
   margin-top: 4px;
 }
 .profession {
   text-transform: uppercase;
-  font-size: 49.97px;
+  font-size: 2em;
   font-family: 'Myriad Pro Bold';
-  margin-top: 2px;
-  letter-spacing: -1px;
-}
-.col-1 .about {
-  width: 826px;
-  margin: 0 auto;
-  margin-top: 130px;
-  padding-left: 30px;
 }
 .about-icon {
   display: inline-block;
   float: left;
-  width: 139px;
-  height: 139px;
+  width: 60px;
+  height: 60px;
   background: #fff;
   border: 2px solid #3d6cb0;
   border-radius: 50%;
@@ -90,41 +98,48 @@ body {
   content: "";
   display: block;
   position: absolute;
-  width: 129px;
-  height: 129px;
+  width: 52px;
+  height: 52px;
   background: #3d6cb0;
   border-radius: 50%;
-  top: 5px;
-  left: 5px;
+  top: 4px;
+  left: 4px;
 }
 .header {
-  width: 826px;
-  margin-left: 132px;
-  margin-right: 66px;
+  width: 100%;
+}
+.col-1,
+.col-2 {
+  padding: 10px;
+}
+.about {
+  margin-top: 70px;
+}
+.content {
+  display: inline-block;
+  margin-top: 70px;
 }
 .col-1 {
-  margin-top: 168px;
+  padding-left: 52px;
+  margin-top: 73px;
   display: inline-block;
   float: left;
-  width: 1024px;
+  width: 30%;
 }
 .col-2 {
   display: inline-block;
   float: right;
-  width: 1264px;
-  margin-right: 77px;
-  margin-left: 115px;
+  width: 45%;
+  padding-left: 52px;
+  padding-right: 140px;
 }
 .about-header {
-  margin-left: 25px;
-  margin-bottom: 75px;
-  line-height: 144px;
   display: inline-block;
   float: left;
   vertical-align: middle;
   text-transform: uppercase;
   color: #3d6cb0;
-  font-size: 82.3px;
+  font-size: 2em;
   font-family: 'Myriad Pro Bold';
 }
 .about-header::after {
@@ -137,10 +152,10 @@ body {
   margin-left: 14px;
   clear: right;
 }
-.profile-info {
+.about-info {
   display: block;
   clear: both;
-  font-size: 30.86px;
+  margin-top: 50px;
 }
 span.profile-info-bold {
   font-family: 'Myriad Pro Bold';
