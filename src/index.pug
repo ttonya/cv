@@ -1,0 +1,108 @@
+mixin header(headerData)
+  .block-header
+   .about-icon= headerData.icon
+   .about-header= headerData.header
+
+mixin experience(experienceData)
+  li.experience-info 
+    .experience-position-degree= experienceData.degree
+    .experience-period= experienceData.period
+    .experience-facility= experienceData.facility
+    .experience-description= experienceData.description
+
+doctype html
+html(lang="en")
+  head
+    title= pageTitle
+  body
+   .col-1
+    .header
+       .round
+       .name NAME HERE 
+       .surname SURNAME
+       .profession GRAPHIC DESIGNER
+    .profile
+    .about   
+       - const profile = {icon: ' ', header: 'Profile'};
+       +header(profile)  
+       .about-info Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu 
+       span.profile-info-bold pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. 
+    .contact
+    .about  
+       - const contact = {icon: ' ', header: 'Contact'};
+       +header(contact)
+       .content   
+       .contact-info 
+         .contact-info-header Address
+         .contact-info-data Some Street, NY
+         .contact-info-header Email
+         .contact-info-data email@gmail.com
+         .contact-info-header Phone
+         .contact-info-data +1(645)138-77-2
+         .contact-info-header Website
+         .contact-info-data domain.com
+    .skills       
+    .about  
+        - const skills = {icon: ' ', header: 'Skills'};
+        +header(skills)
+        .content  
+        .skills-info 
+          .skill 
+           .skill-name Creative
+           .skill-range
+          .skill 
+           .skill-name Teamwork
+           .skill-range
+          .skill 
+           .skill-name Innovate
+           .skill-range
+          .skill 
+           .skill-name Communication
+           .skill-range
+                   
+   .col-2 
+    .about 
+    .education
+    - const ed = {icon: ' ', header: 'Education'};
+    +header(ed)
+    .content 
+    ul
+     - const education = {degree: 'Master Degree', period: 'Feb 2011 - Jun 2014', facility: 'MIT', description: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque.'};  
+     +experience(education)
+     +experience(education)
+     +experience(education)
+     +experience(education)
+    
+    .about                     
+    .experience
+      - const exp = {icon: ' ', header: 'Experience'};
+      +header(exp)
+      .content 
+      ul
+       - const expInfo = {degree: 'Designer', period: 'Feb 2011 - Jun 2014', facility: 'Google', description: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque.'};  
+       +experience(expInfo)
+       +experience(expInfo)
+       +experience(expInfo)
+    .software
+    .about
+     - const software = {icon: ' ', header: 'Software'};
+     +header(software)
+     .content
+     .software-info 
+      .software-name Photoshop
+      .software-skill 
+     .software-info 
+      .software-name Illustrator
+      .software-skill 
+     .software-info 
+      .software-name InDesign
+      .software-skill 
+     .software-info 
+      .software-name DreamWeaver
+      .software-skill 
+     .software-info 
+      .software-name After Effects
+      .software-skill  
+     .software-info 
+      .software-name Htl5 and CSS3
+      .software-skill           
