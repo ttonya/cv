@@ -1,19 +1,44 @@
-mixin header(headerData)
+mixin softwareSkill(level)
+  .software-skill
+   div.software-skill-colored(style='width:'+level+'px')
+   
+mixin skillLevel(l1,l2,l3,l4,l5,l6,l7,l8,l9,l10)
+  ul
+   li.skill-level(style='background-color:'+l1)  
+   li.skill-level(style='background-color:'+l2)  
+   li.skill-level(style='background-color:'+l3)  
+   li.skill-level(style='background-color:'+l4)  
+   li.skill-level(style='background-color:'+l5)  
+   li.skill-level(style='background-color:'+l5)  
+   li.skill-level(style='background-color:'+l6)  
+   li.skill-level(style='background-color:'+l7)  
+   li.skill-level(style='background-color:'+l8)  
+   li.skill-level(style='background-color:'+l9)  
+   li.skill-level(style='background-color:'+l10)  
+   
+mixin header(header, className)
   .block-header
-   .about-icon= headerData.icon
-   .about-header= headerData.header
+    .about-icon(class=className)
+    .about-header #{header}
 
+mixin education(educationData)
+  li.experience-info 
+    .experience-position-degree.info-header= educationData.degree
+    .experience-period= educationData.period
+    .experience-facility.info-header= educationData.facility
+    .experience-description= educationData.description
 mixin experience(experienceData)
   li.experience-info 
-    .experience-position-degree.info-header= experienceData.degree
-    .experience-period= experienceData.period
     .experience-facility.info-header= experienceData.facility
-    .experience-description= experienceData.description
-
+    .experience-period= experienceData.period
+    .experience-position-degree.info-header= experienceData.degree
+    .experience-description= experienceData.description 
+       
 doctype html
 html(lang="en")
   head
     title= pageTitle
+    link(rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css')
   body
    .col-1
     .header
@@ -22,14 +47,12 @@ html(lang="en")
        .surname SURNAME
        .profession GRAPHIC DESIGNER
     .about.profile  
-       - const profile = {icon: ' ', header: 'Profile'};
-       +header(profile) 
+       +header('Profile', 'profile-icon') 
        .content 
         .about-info Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu 
          span.profile-info-bold pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. 
     .about.contact  
-       - const contact = {icon: ' ', header: 'Contact'};
-       +header(contact)
+       +header('Contact', 'contact-icon')
        .content   
          .contact-info 
           table
@@ -46,63 +69,58 @@ html(lang="en")
              td.contact-info-header WEBSITE
              td.contact-info-data domain.com       
     .about.skills  
-        - const skills = {icon: ' ', header: 'Skills'};
-        +header(skills)
-        .content  
-          .skills-info 
+        +header('Skills', 'skills-icon')
+        .content 
             .skill 
              .skill-name.info-header Creative
-             .skill-range
+             +skillLevel('#3d6cb0','#3d6cb0','#3d6cb0','#3d6cb0','#3d6cb0','#3d6cb0','#3d6cb0','#e6e6e6','#e6e6e6','#e6e6e6')
             .skill 
              .skill-name.info-header Teamwork
-             .skill-range
+             +skillLevel('#3d6cb0','#3d6cb0','#3d6cb0','#3d6cb0','#3d6cb0','#3d6cb0','#3d6cb0','#3d6cb0','#3d6cb0','#e6e6e6')
             .skill 
              .skill-name.info-header Innovate
-             .skill-range
+             +skillLevel('#3d6cb0','#3d6cb0','#3d6cb0','#3d6cb0','#e6e6e6','#e6e6e6','#e6e6e6','#e6e6e6','#e6e6e6','#e6e6e6')
             .skill 
              .skill-name.info-header Communication
-             .skill-range
+             +skillLevel('#3d6cb0','#3d6cb0','#3d6cb0','#3d6cb0','#3d6cb0','#3d6cb0','#3d6cb0','#3d6cb0','#3d6cb0','#e6e6e6')
                    
    .col-2 
     .about.education 
-      - const ed = {icon: ' ', header: 'Education'};
-      +header(ed)
+      +header('Education', 'education-icon')
       .content 
         ul
-         - const education = {degree: 'Master Degree', period: 'Feb 2011 - Jun 2014', facility: 'MIT', description: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque.'};  
-         +experience(education)
-         +experience(education)
-         +experience(education)
-         +experience(education)
+         - const edu = {degree: 'Master Degree', period: '// Feb 2011 - Jun 2014', facility: 'UNIVERSITY NAME', description: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque.'};  
+         +education(edu)
+         +education(edu)
+         +education(edu)
+         +education(edu)
     
     .about.experience                     
-      - const exp = {icon: ' ', header: 'Experience'};
-      +header(exp)
+      +header('Experience', 'experience-icon')
       .content 
         ul
-         - const expInfo = {degree: 'Designer', period: 'Feb 2011 - Jun 2014', facility: 'Google', description: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque.'};  
+         - const expInfo = {facility: 'COMPANY NAME', period: '// Feb 2011 - Jun 2014', degree: 'YOUR JOB HERE', description: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque.'};  
          +experience(expInfo)
          +experience(expInfo)
          +experience(expInfo)
     .about.software
-     - const software = {icon: ' ', header: 'Software'};
-     +header(software)
+     +header('Software', 'software-icon')
      .content
        .software-info 
         .software-name.info-header Photoshop
-        .software-skill 
+        +softwareSkill(260) 
        .software-info 
         .software-name.info-header Illustrator
-        .software-skill 
+        +softwareSkill(202) 
        .software-info 
         .software-name.info-header InDesign
-        .software-skill 
+        +softwareSkill(161) 
        .software-info 
         .software-name.info-header DreamWeaver
-        .software-skill 
+        +softwareSkill(237)  
        .software-info 
         .software-name.info-header After Effects
-        .software-skill  
+        +softwareSkill(176) 
        .software-info 
         .software-name.info-header Htl5 and CSS3
-        .software-skill           
+        +softwareSkill(260)           

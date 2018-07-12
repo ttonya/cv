@@ -1,4 +1,11 @@
 @font-face {
+  font-family: 'FontAwesome';
+  src: url(fonts/fa-solid-900.eot);
+  src: url(fonts/fa-solid-900.eot?#iefix) format('embedded-opentype'), url(fonts/fa-regular-400.woff) format('woff'), url(fonts/fa-regular-400.ttf) format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
   font-family: 'Myriad Pro Regular';
   src: url(fonts/MyriadPro-Regular.eot);
   src: url(fonts/MyriadPro-Regular.eot?#iefix) format('embedded-opentype'), url(fonts/MyriadPro-Regular.woff) format('woff'), url(fonts/MyriadPro-Regular.ttf) format('truetype');
@@ -26,6 +33,12 @@ body {
   font-size: 14px;
   max-width: 1920px;
   min-width: 600px;
+}
+.profile-icon::after {
+  position: absolute;
+  font-family: 'FontAwesome';
+  content: "\F095";
+  color: #fff;
 }
 .header {
   text-align: center;
@@ -139,8 +152,8 @@ span.profile-info-bold {
   float: left;
   width: 73px;
   height: 73px;
-  background: #fff;
-  border: 1px solid #3d6cb0;
+  background-color: #fff;
+  border: 1px solid #0071bb;
   border-radius: 50%;
   position: relative;
   margin: 0 auto;
@@ -151,7 +164,7 @@ span.profile-info-bold {
   position: absolute;
   width: 67px;
   height: 67px;
-  background: #3d6cb0;
+  background-color: #0071bb;
   border-radius: 50%;
   top: 3px;
   left: 3px;
@@ -180,6 +193,34 @@ span.profile-info-bold {
   display: inline-block;
   float: right;
 }
+.skills .content {
+  text-align: center;
+}
+.skill ul li {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+}
+.skill ul li:not(:first-child) {
+  margin-left: 7px;
+}
+.experience-position-degree {
+  float: left;
+  display: inline-block;
+}
+.experience-period {
+  display: inline-block;
+  margin-left: 16px;
+  clear: right;
+}
+.education .experience-position-degree {
+  font-family: 'Myriad Pro Bold';
+  color: #3d6cb0;
+}
+.experience .experience-facility {
+  font-family: 'Myriad Pro Bold';
+}
 .about-header {
   position: absolute;
   margin-left: 10px;
@@ -187,7 +228,7 @@ span.profile-info-bold {
   float: left;
   top: 11px;
   text-transform: uppercase;
-  color: #3d6cb0;
+  color: #0071bb;
   font-family: 'Myriad Pro Bold';
 }
 .about-header::after {
@@ -195,7 +236,7 @@ span.profile-info-bold {
   position: absolute;
   display: inline-block;
   height: 5px;
-  background-image: linear-gradient(#3d6cb0, #3d6cb0);
+  background-image: linear-gradient(#0071bb, #0071bb);
   width: 100%;
   top: 23px;
   margin-left: 7px;
@@ -236,5 +277,20 @@ li {
   vertical-align: top;
   margin: 0;
   display: inline-block;
+}
+.software-skill {
+  width: 287px;
+  height: 23px;
+  background-color: #e6e6e6;
+  margin: 10px;
+  padding: 0;
+  position: relative;
+}
+.software-skill-colored {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 23px;
+  background-color: #3d6cb0;
 }
 
