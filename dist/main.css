@@ -34,12 +34,6 @@ body {
   max-width: 1920px;
   min-width: 600px;
 }
-.profile-icon::after {
-  position: absolute;
-  font-family: 'FontAwesome';
-  content: "\F095";
-  color: #fff;
-}
 .header {
   text-align: center;
 }
@@ -109,7 +103,7 @@ span.profile-info-bold {
   width: 555px;
 }
 .col-2 {
-  width: 766px;
+  width: 770px;
 }
 /* start margin-top for headers*/
 .profile {
@@ -118,7 +112,31 @@ span.profile-info-bold {
 .contact {
   margin-top: 48px;
 }
+.skills {
+  margin-top: 26px;
+  margin-left: -2px;
+}
 /* end margin-top for headers*/
+/*start icons*/
+.profile-icon {
+  background: url(img/icons.png) no-repeat -64px -1px;
+}
+.contact-icon {
+  background: url(img/icons.png) no-repeat -128px -1px;
+}
+.skills-icon {
+  background: url(img/icons.png) no-repeat -197px -1px;
+}
+.education-icon {
+  background: url(img/icons.png) no-repeat 3px -1px;
+}
+.experience-icon {
+  background: url(img/icons.png) no-repeat -333px -1px;
+}
+.software-icon {
+  background: url(img/icons.png) no-repeat -265px -1px;
+}
+/*end icons*/
 .name {
   font-family: 'Myriad Pro Light SemiExtended';
   text-transform: uppercase;
@@ -152,22 +170,12 @@ span.profile-info-bold {
   float: left;
   width: 73px;
   height: 73px;
-  background-color: #fff;
   border: 1px solid #0071bb;
   border-radius: 50%;
   position: relative;
   margin: 0 auto;
-}
-.about-icon::after {
-  content: "";
-  display: block;
-  position: absolute;
-  width: 67px;
-  height: 67px;
   background-color: #0071bb;
-  border-radius: 50%;
-  top: 3px;
-  left: 3px;
+  box-shadow: 0px 0px 0px 3px #fff inset;
 }
 .header {
   width: 100%;
@@ -179,10 +187,12 @@ span.profile-info-bold {
 .content {
   display: inline-block;
 }
-.contact .content,
-.skills .content,
-.software .content {
+.software .content,
+.contact .content {
   margin-top: 90px;
+}
+.skills .content {
+  margin-top: 82px;
 }
 .col-1 {
   margin-top: 73px;
@@ -190,11 +200,38 @@ span.profile-info-bold {
   float: left;
 }
 .col-2 {
+  margin-top: 60px;
   display: inline-block;
   float: right;
 }
 .skills .content {
   text-align: center;
+  margin-left: -68px;
+}
+table {
+  margin-left: -79px;
+  margin-top: 2px;
+}
+td {
+  margin: 0;
+  padding: 0;
+  height: 54px;
+  text-align: left;
+}
+td.contact-info-header {
+  width: 131px;
+}
+.skill {
+  margin-left: 8px;
+  margin-top: 17px;
+}
+.skill-name.info-header {
+  margin-left: 8px;
+}
+.skill ul {
+  margin: 0;
+  margin-top: 7px;
+  margin-left: -8px;
 }
 .skill ul li {
   display: inline-block;
@@ -203,7 +240,7 @@ span.profile-info-bold {
   border-radius: 50%;
 }
 .skill ul li:not(:first-child) {
-  margin-left: 7px;
+  margin-left: 7.5px;
 }
 .experience-position-degree {
   float: left;
