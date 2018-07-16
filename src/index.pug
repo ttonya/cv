@@ -1,39 +1,39 @@
 mixin softwareSkill(level)
-  .software-skill
-   div.software-skill-colored(style='width:'+level+'px')
+  .software__skill
+   div.software__skill_colored(style='width:'+level+'px')
    
 mixin skillLevel(l1,l2,l3,l4,l5,l6,l7,l8,l9,l10,l11,l12)
   ul
-   li.skill-level(style='background-color:'+l1)  
-   li.skill-level(style='background-color:'+l2)  
-   li.skill-level(style='background-color:'+l3)  
-   li.skill-level(style='background-color:'+l4)  
-   li.skill-level(style='background-color:'+l5)  
-   li.skill-level(style='background-color:'+l5)  
-   li.skill-level(style='background-color:'+l6)  
-   li.skill-level(style='background-color:'+l7)  
-   li.skill-level(style='background-color:'+l8)  
-   li.skill-level(style='background-color:'+l9)  
-   li.skill-level(style='background-color:'+l10)  
-   li.skill-level(style='background-color:'+l11)
-   li.skill-level(style='background-color:'+l12)
+   li.skill__level(style='background-color:'+l1)  
+   li.skill__level(style='background-color:'+l2)  
+   li.skill__level(style='background-color:'+l3)  
+   li.skill__level(style='background-color:'+l4)  
+   li.skill__level(style='background-color:'+l5)  
+   li.skill__level(style='background-color:'+l5)  
+   li.skill__level(style='background-color:'+l6)  
+   li.skill__level(style='background-color:'+l7)  
+   li.skill__level(style='background-color:'+l8)  
+   li.skill__level(style='background-color:'+l9)  
+   li.skill__level(style='background-color:'+l10)  
+   li.skill__level(style='background-color:'+l11)
+   li.skill__level(style='background-color:'+l12)
 mixin header(header, className)
-  .block-header
-    .about-icon(class=className)
-    .about-header #{header}
+  .block__header
+    .about__icon(class=className)
+    .about__header #{header}
 
 mixin education(educationData)
-  li.experience-info 
-    .experience-position-degree.info-header= educationData.degree
-    .experience-period= educationData.period
-    .experience-facility.info-header= educationData.facility
-    .experience-description= educationData.description
+  li.experience__info 
+    .experience__degree.info__header= educationData.degree
+    .experience__period= educationData.period
+    .experience__facility.info__header= educationData.facility
+    .experience__description= educationData.description
 mixin experience(experienceData)
-  li.experience-info 
-    .experience-facility.info-header= experienceData.facility
-    .experience-period= experienceData.period
-    .experience-position-degree.info-header= experienceData.degree
-    .experience-description= experienceData.description 
+  li.experience__info 
+    .experience__facility.info__header= experienceData.facility
+    .experience__period= experienceData.period
+    .experience__position.info__header= experienceData.degree
+    .experience__description= experienceData.description 
        
 doctype html
 html(lang="en")
@@ -43,51 +43,51 @@ html(lang="en")
   body
    .col-1
     .header
-       .round
-       .name NAME HERE 
-       .surname SURNAME
-       .profession GRAPHIC DESIGNER
+       .header__round
+       .header__name NAME HERE 
+       .header__surname SURNAME
+       .header__profession GRAPHIC DESIGNER
     .about.profile  
-       +header('Profile', 'profile-icon') 
+       +header('Profile', 'profile__icon') 
        .content 
-        .about-info Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu 
-         span.profile-info-bold pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. 
+        .about__info Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu 
+         span.info__bold pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. 
     .about.contact  
-       +header('Contact', 'contact-icon')
+       +header('Contact', 'contact__icon')
        .content   
-         .contact-info 
+         .contact__info 
           table
            tr
-             td.contact-info-header ADDRESS
-             td.contact-info-data Main Street, City.
+             td.contact__header ADDRESS
+             td.contact__data Main Street, City.
            tr 
-             td.contact-info-header E-MAIL
-             td.contact-info-data contact@domain.com
+             td.contact__header E-MAIL
+             td.contact__data contact@domain.com
            tr
-             td.contact-info-header PHONE
-             td.contact-info-data 555-555-555
+             td.contact__header PHONE
+             td.contact__data 555-555-555
            tr
-             td.contact-info-header WEBSITE
-             td.contact-info-data www.yourweb.com       
+             td.contact__header WEBSITE
+             td.contact__data www.yourweb.com       
     .about.skills  
-        +header('Skills', 'skills-icon')
+        +header('Skills', 'skills__icon')
         .content 
             .skill 
-             .skill-name.info-header Creative
+             .skill__name.info__header Creative
              +skillLevel('#3d6cb0','#3d6cb0','#3d6cb0','#3d6cb0','#3d6cb0','#3d6cb0','#3d6cb0','#3d6cb0','#e6e6e6','#e6e6e6','#e6e6e6')
             .skill 
-             .skill-name.info-header Teamwork
+             .skill__name.info__header Teamwork
              +skillLevel('#3d6cb0','#3d6cb0','#3d6cb0','#3d6cb0','#3d6cb0','#3d6cb0','#3d6cb0','#3d6cb0','#3d6cb0','#3d6cb0','#e6e6e6')
             .skill 
-             .skill-name.info-header Innovate
+             .skill__name.info__header Innovate
              +skillLevel('#3d6cb0','#3d6cb0','#3d6cb0','#3d6cb0','#3d6cb0','#e6e6e6','#e6e6e6','#e6e6e6','#e6e6e6','#e6e6e6','#e6e6e6')
             .skill 
-             .skill-name.info-header Communication
+             .skill__name.info__header Communication
              +skillLevel('#3d6cb0','#3d6cb0','#3d6cb0','#3d6cb0','#3d6cb0','#3d6cb0','#3d6cb0','#3d6cb0','#3d6cb0','#3d6cb0','#e6e6e6')
                    
    .col-2 
     .about.education 
-      +header('Education', 'education-icon')
+      +header('Education', 'education__icon')
       .content 
         ul
          - const edu = {degree: 'Master Degree', period: '// Feb 2011 - Jun 2014', facility: 'UNIVERSITY NAME', description: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque.'};  
@@ -97,7 +97,7 @@ html(lang="en")
          +education(edu)
     
     .about.experience                     
-      +header('Experience', 'experience-icon')
+      +header('Experience', 'experience__icon')
       .content 
         ul
          - const expInfo = {facility: 'COMPANY NAME', period: '// Feb 2011 - Jun 2014', degree: 'YOUR JOB HERE', description: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque.'};  
@@ -105,23 +105,23 @@ html(lang="en")
          +experience(expInfo)
          +experience(expInfo)
     .about.software
-     +header('Software', 'software-icon')
+     +header('Software', 'software__icon')
      .content
-       .software-info 
-        .software-name.info-header Photoshop
+       .software__info 
+        .software__name.info__header Photoshop
         +softwareSkill(260) 
-       .software-info 
-        .software-name.info-header Illustrator
+       .software__info 
+        .software__name.info__header Illustrator
         +softwareSkill(202) 
-       .software-info 
-        .software-name.info-header InDesign
+       .software__info 
+        .software__name.info__header InDesign
         +softwareSkill(161) 
-       .software-info 
-        .software-name.info-header DreamWeaver
+       .software__info 
+        .software__name.info__header DreamWeaver
         +softwareSkill(237)  
-       .software-info 
-        .software-name.info-header After Effects
+       .software__info 
+        .software__name.info__header After Effects
         +softwareSkill(176) 
-       .software-info 
-        .software-name.info-header Htl5 and CSS3
+       .software__info 
+        .software__name.info__header Htl5 and CSS3
         +softwareSkill(260)           

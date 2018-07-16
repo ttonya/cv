@@ -37,14 +37,14 @@ body {
 .header {
   text-align: center;
 }
-.round {
+.header__round {
   background: #fff;
   border: 1px solid #3d6cb0;
   border-radius: 50%;
   position: relative;
   margin: 0 auto;
 }
-.round::after {
+.header__round::after {
   content: "";
   display: block;
   position: absolute;
@@ -53,50 +53,50 @@ body {
   top: 10px;
   left: 10px;
 }
-.round {
+.header__round {
   width: 238px;
   height: 238px;
 }
-.round::after {
+.header__round::after {
   width: 208px;
   height: 208px;
   top: 15px;
   left: 15px;
 }
-.name {
+.header__name {
   font-size: 54px;
 }
-.surname {
+.header__surname {
   font-size: 64px;
 }
-.profession {
+.header__profession {
   font-size: 25.78px;
 }
-.about-header {
+.about__header {
   font-size: 42.47px;
 }
-.about-info {
+.about__info {
   font-size: 15.92px;
 }
-span.profile-info-bold {
+span.info__bold {
   font-size: 15.92px;
   line-height: 17px;
 }
-.contact-info-header {
+.contact__header {
   font-size: 21.23px;
   color: #3d6cb0;
 }
-.contact-info-data {
+.contact__data {
   font-size: 21.23px;
 }
-.info-header {
+.info__header {
   font-size: 26.54px;
   text-transform: uppercase;
 }
-.experience-description {
+.experience__description {
   font-size: 15.92px;
 }
-.experience-period {
+.experience__period {
   font-size: 26.54px;
 }
 .col-1 {
@@ -118,37 +118,37 @@ span.profile-info-bold {
 }
 /* end margin-top for headers*/
 /*start icons*/
-.profile-icon {
+.profile__icon {
   background: url(img/icons.png) no-repeat -64px -1px;
 }
-.contact-icon {
+.contact__icon {
   background: url(img/icons.png) no-repeat -128px -1px;
 }
-.skills-icon {
+.skills__icon {
   background: url(img/icons.png) no-repeat -197px -1px;
 }
-.education-icon {
+.education__icon {
   background: url(img/icons.png) no-repeat 3px -1px;
 }
-.experience-icon {
+.experience__icon {
   background: url(img/icons.png) no-repeat -333px -1px;
 }
-.software-icon {
+.software__icon {
   background: url(img/icons.png) no-repeat -265px -1px;
 }
 /*end icons*/
-.name {
+.header__name {
   font-family: 'Myriad Pro Light SemiExtended';
   text-transform: uppercase;
   margin-top: 26px;
   letter-spacing: 0.5px;
 }
-.surname {
+.header__surname {
   text-transform: uppercase;
   font-family: 'Myriad Pro Bold';
   margin-top: -16px;
 }
-.profession {
+.header__profession {
   text-transform: uppercase;
   font-family: 'Myriad Pro Bold';
   letter-spacing: -0.5px;
@@ -161,11 +161,11 @@ span.profile-info-bold {
 .col-2 {
   padding-top: 10px;
 }
-.block-header {
+.block__header {
   width: 100%;
   position: relative;
 }
-.about-icon {
+.about__icon {
   display: inline-block;
   float: left;
   width: 73px;
@@ -218,14 +218,14 @@ td {
   height: 54px;
   text-align: left;
 }
-td.contact-info-header {
+td.contact__header {
   width: 131px;
 }
 .skill {
   margin-left: 8px;
   margin-top: 17px;
 }
-.skill-name.info-header {
+.skill__name.info__header {
   margin-left: 8px;
 }
 .skill ul {
@@ -242,23 +242,23 @@ td.contact-info-header {
 .skill ul li:not(:first-child) {
   margin-left: 7.5px;
 }
-.experience-position-degree {
+.experience__position {
   float: left;
   display: inline-block;
+  font-family: 'Myriad Pro Bold';
 }
-.experience-period {
+.experience__degree {
+  float: left;
+  display: inline-block;
+  font-family: 'Myriad Pro Bold';
+  color: #3d6cb0;
+}
+.experience__period {
   display: inline-block;
   margin-left: 16px;
   clear: right;
 }
-.education .experience-position-degree {
-  font-family: 'Myriad Pro Bold';
-  color: #3d6cb0;
-}
-.experience .experience-facility {
-  font-family: 'Myriad Pro Bold';
-}
-.about-header {
+.about__header {
   position: absolute;
   margin-left: 10px;
   display: inline-block;
@@ -268,7 +268,7 @@ td.contact-info-header {
   color: #0071bb;
   font-family: 'Myriad Pro Bold';
 }
-.about-header::after {
+.about__header::after {
   content: "";
   position: absolute;
   display: inline-block;
@@ -278,12 +278,12 @@ td.contact-info-header {
   top: 23px;
   margin-left: 7px;
 }
-.about-info {
+.about__info {
   display: block;
   clear: both;
 }
-span.profile-info-bold,
-.contact-info-header {
+span.info__bold,
+.contact__header {
   font-family: 'Myriad Pro Bold';
 }
 ul {
@@ -315,7 +315,7 @@ li {
   margin: 0;
   display: inline-block;
 }
-.software-skill {
+.software__skill {
   width: 287px;
   height: 23px;
   background-color: #e6e6e6;
@@ -323,7 +323,7 @@ li {
   padding: 0;
   position: relative;
 }
-.software-skill-colored {
+.software__skill_colored {
   position: absolute;
   top: 0;
   left: 0;
