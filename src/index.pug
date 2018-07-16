@@ -1,127 +1,20 @@
-mixin softwareSkill(level)
-  .software__skill
-   div.software__skill_colored(style='width:'+level+'px')
-   
-mixin skillLevel(l1,l2,l3,l4,l5,l6,l7,l8,l9,l10,l11,l12)
-  ul
-   li.skill__level(style='background-color:'+l1)  
-   li.skill__level(style='background-color:'+l2)  
-   li.skill__level(style='background-color:'+l3)  
-   li.skill__level(style='background-color:'+l4)  
-   li.skill__level(style='background-color:'+l5)  
-   li.skill__level(style='background-color:'+l5)  
-   li.skill__level(style='background-color:'+l6)  
-   li.skill__level(style='background-color:'+l7)  
-   li.skill__level(style='background-color:'+l8)  
-   li.skill__level(style='background-color:'+l9)  
-   li.skill__level(style='background-color:'+l10)  
-   li.skill__level(style='background-color:'+l11)
-   li.skill__level(style='background-color:'+l12)
-mixin header(header, className)
-  .block__header
-    .about__icon(class=className)
-    .about__header #{header}
-
-mixin education(educationData)
-  li.experience__info 
-    .experience__degree.info__header= educationData.degree
-    .experience__period= educationData.period
-    .experience__facility.info__header= educationData.facility
-    .experience__description= educationData.description
-mixin experience(experienceData)
-  li.experience__info 
-    .experience__facility.info__header= experienceData.facility
-    .experience__period= experienceData.period
-    .experience__position.info__header= experienceData.degree
-    .experience__description= experienceData.description 
-       
+include mixins/software-mixin.pug 
+include mixins/skill-mixin.pug 
+include mixins/header-mixin.pug 
+include mixins/education-mixin.pug 
+include mixins/experience-mixin.pug 
+include mixins/software-mixin.pug   
 doctype html
 html(lang="en")
-  head
-    title= pageTitle
-    link(rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css')
+  include includes/head.pug
   body
    .col-1
-    .header
-       .header__round
-       .header__name NAME HERE 
-       .header__surname SURNAME
-       .header__profession GRAPHIC DESIGNER
-    .about.profile  
-       +header('Profile', 'profile__icon') 
-       .content 
-        .about__info Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu 
-         span.info__bold pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. 
-    .about.contact  
-       +header('Contact', 'contact__icon')
-       .content   
-         .contact__info 
-          table
-           tr
-             td.contact__header ADDRESS
-             td.contact__data Main Street, City.
-           tr 
-             td.contact__header E-MAIL
-             td.contact__data contact@domain.com
-           tr
-             td.contact__header PHONE
-             td.contact__data 555-555-555
-           tr
-             td.contact__header WEBSITE
-             td.contact__data www.yourweb.com       
-    .about.skills  
-        +header('Skills', 'skills__icon')
-        .content 
-            .skill 
-             .skill__name.info__header Creative
-             +skillLevel('#3d6cb0','#3d6cb0','#3d6cb0','#3d6cb0','#3d6cb0','#3d6cb0','#3d6cb0','#3d6cb0','#e6e6e6','#e6e6e6','#e6e6e6')
-            .skill 
-             .skill__name.info__header Teamwork
-             +skillLevel('#3d6cb0','#3d6cb0','#3d6cb0','#3d6cb0','#3d6cb0','#3d6cb0','#3d6cb0','#3d6cb0','#3d6cb0','#3d6cb0','#e6e6e6')
-            .skill 
-             .skill__name.info__header Innovate
-             +skillLevel('#3d6cb0','#3d6cb0','#3d6cb0','#3d6cb0','#3d6cb0','#e6e6e6','#e6e6e6','#e6e6e6','#e6e6e6','#e6e6e6','#e6e6e6')
-            .skill 
-             .skill__name.info__header Communication
-             +skillLevel('#3d6cb0','#3d6cb0','#3d6cb0','#3d6cb0','#3d6cb0','#3d6cb0','#3d6cb0','#3d6cb0','#3d6cb0','#3d6cb0','#e6e6e6')
-                   
+      include includes/header.pug
+      include includes/profile.pug
+      include includes/contact.pug
+      include includes/skills.pug   
    .col-2 
-    .about.education 
-      +header('Education', 'education__icon')
-      .content 
-        ul
-         - const edu = {degree: 'Master Degree', period: '// Feb 2011 - Jun 2014', facility: 'UNIVERSITY NAME', description: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque.'};  
-         +education(edu)
-         +education(edu)
-         +education(edu)
-         +education(edu)
-    
-    .about.experience                     
-      +header('Experience', 'experience__icon')
-      .content 
-        ul
-         - const expInfo = {facility: 'COMPANY NAME', period: '// Feb 2011 - Jun 2014', degree: 'YOUR JOB HERE', description: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque.'};  
-         +experience(expInfo)
-         +experience(expInfo)
-         +experience(expInfo)
-    .about.software
-     +header('Software', 'software__icon')
-     .content
-       .software__info 
-        .software__name.info__header Photoshop
-        +softwareSkill(260) 
-       .software__info 
-        .software__name.info__header Illustrator
-        +softwareSkill(202) 
-       .software__info 
-        .software__name.info__header InDesign
-        +softwareSkill(161) 
-       .software__info 
-        .software__name.info__header DreamWeaver
-        +softwareSkill(237)  
-       .software__info 
-        .software__name.info__header After Effects
-        +softwareSkill(176) 
-       .software__info 
-        .software__name.info__header Htl5 and CSS3
-        +softwareSkill(260)           
+      include includes/education.pug 
+      include includes/experience.pug
+      include includes/software.pug      
+         
